@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="550.0" prefWidth="806.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.stancu.presentation.controller.user.ClientController">
+    <TableView fx:id="tableview" layoutX="19.0" layoutY="137.0" prefHeight="310.0" prefWidth="541.0" style="-fx-selection-bar: red;">
+        <columns>
+            <TableColumn fx:id="title" prefWidth="180" text="Title" />
+            <TableColumn fx:id="rating" prefWidth="60" text="Rating" />
+            <TableColumn fx:id="calories" prefWidth="60" text="Calories" />
+            <TableColumn fx:id="protein" prefWidth="60" text="Protein" />
+            <TableColumn fx:id="fat" prefWidth="60" text="Fat" />
+            <TableColumn fx:id="sodium" prefWidth="60" text="Sodium" />
+            <TableColumn fx:id="price" prefWidth="60" text="Price" />
+        </columns>
+    </TableView>
+    <TextField fx:id="filterField" layoutX="105.0" layoutY="91.0" prefHeight="25.0" prefWidth="348.0" style="-fx-background-color: #E5E7E9;" />
+    <Label layoutX="22.0" layoutY="92.0" text="Search Box">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+    <Pane layoutY="2.0" prefHeight="51.0" prefWidth="806.0" style="-fx-background-color: #228B22;">
+        <Label layoutX="17.0" layoutY="8.0" text="Client Window" textFill="WHITE">
+            <font>
+                <Font name="Comic Sans MS Bold Italic" size="25.0" />
+            </font>
+        </Label>
+    </Pane>
+   <Button fx:id="finishOrderButton" layoutX="696.0" layoutY="489.0" mnemonicParsing="false" onAction="#calculateOrder" prefHeight="36.0" prefWidth="81.0" style="-fx-background-color: #2bfafa; -fx-text-fill: black\;" text="Show Order" />
+    <Pane layoutY="53.0" prefHeight="8.0" prefWidth="806.0" style="-fx-background-color: #ECF142;" />
+   <ComboBox fx:id="comboBox" layoutX="610.0" layoutY="91.0" prefWidth="150.0" />
+   <Button fx:id="addToOrderButton" layoutX="579.0" layoutY="489.0" mnemonicParsing="false" onAction="#addProductToFinalOrder" prefHeight="36.0" prefWidth="81.0" style="-fx-background-color: coral; -fx-text-fill: white;" text="Add" />
+   <TextArea fx:id="orderTextArea" layoutX="596.0" layoutY="137.0" prefHeight="310.0" prefWidth="200.0" />
+   <Button fx:id="billButton" layoutX="459.0" layoutY="489.0" mnemonicParsing="false" onAction="#generateBill" prefHeight="36.0" prefWidth="81.0" style="-fx-background-color: #737478; -fx-text-fill: white;" text="Bill" />
+   <Button fx:id="logOutButton" layoutX="30.0" layoutY="489.0" mnemonicParsing="false" onAction="#logout" prefHeight="36.0" prefWidth="81.0" style="-fx-background-color: red; -fx-text-fill: white;" text="Log Out" />
+</AnchorPane>

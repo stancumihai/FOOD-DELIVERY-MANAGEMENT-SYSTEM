@@ -1,0 +1,9 @@
+
+Title : Sweet and Sour Pickles  price :12
+
+Title : Grilled Chicken Moroccan Style  price :63
+
+Title : Sautéed Chicken Breasts With Country Ham and Sage Sauce  price :54
+
+ The total price is : 129
+2021-02-04    21-35-59

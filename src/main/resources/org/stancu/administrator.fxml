@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
+<AnchorPane id="AnchorPane" fx:id="messageLabel" prefHeight="550.0" prefWidth="725.0"
+            xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.stancu.presentation.controller.user.AdministratorController">
+    <Pane layoutY="2.0" prefHeight="51.0" prefWidth="725.0" style="-fx-background-color: #228B22;">
+        <Label layoutX="17.0" layoutY="8.0" text="Admin Window" textFill="WHITE">
+            <font>
+                <Font name="Comic Sans MS Bold Italic" size="25.0"/>
+            </font>
+        </Label>
+
+    </Pane>
+    <Pane layoutY="53.0" prefHeight="5.0" prefWidth="725.0" style="-fx-background-color: #ECF142;"/>
+    <Button fx:id="addButton" layoutX="436.0" layoutY="82.0" mnemonicParsing="false" onAction="#addProduct"
+            prefWidth="70.0" style="-fx-background-radius: 10px; -fx-background-color: #00AFD1;" text="Add">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+    <Button fx:id="deleteButton" layoutX="533.0" layoutY="82.0" mnemonicParsing="false" onAction="#deleteProduct"
+            prefWidth="70.0" style="-fx-background-radius: 10px; -fx-background-color: #f59965;" text="Delete">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+    <Button fx:id="modifyButton" layoutX="631.0" layoutY="82.0" mnemonicParsing="false" onAction="#modifyProduct"
+            prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 10px; -fx-background-color: #737478;"
+            text="Modify">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+    <TextField fx:id="titleField" layoutX="498.0" layoutY="148.0"/>
+    <TextField fx:id="ratingField" layoutX="498.0" layoutY="199.0"/>
+    <TextField fx:id="caloriesField" layoutX="498.0" layoutY="251.0"/>
+    <TextField fx:id="proteinField" layoutX="498.0" layoutY="304.0"/>
+    <TextField fx:id="sodiumField" layoutX="498.0" layoutY="354.0"/>
+    <Label layoutX="499.0" layoutY="128.0" prefHeight="18.0" prefWidth="29.0" text="Title">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Label layoutX="500.0" layoutY="176.0" prefHeight="18.0" prefWidth="46.0" text="Rating">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Label layoutX="498.0" layoutY="231.0" prefHeight="20.0" prefWidth="78.0" text="Calories">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Label layoutX="500.0" layoutY="284.0" prefHeight="18.0" prefWidth="46.0" text="Protein">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Label layoutX="500.0" layoutY="334.0" prefHeight="20.0" prefWidth="60.0" text="Sodium">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <TextField fx:id="fatField" layoutX="498.0" layoutY="399.0"/>
+    <Label layoutX="500.0" layoutY="380.0" prefHeight="18.0" prefWidth="46.0" text="Fat">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <TextField fx:id="priceField" layoutX="498.0" layoutY="453.0"/>
+    <Label layoutX="500.0" layoutY="430.0" prefHeight="18.0" prefWidth="46.0" text="Price">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <TextField fx:id="valueArea" layoutX="59.0" layoutY="173.0" prefHeight="26.0" prefWidth="362.0"/>
+    <Button fx:id="generateReportButton" layoutX="59.0" layoutY="448.0" mnemonicParsing="false"
+            onAction="#generateReport" prefHeight="36.0" prefWidth="130.0"
+            style="-fx-background-radius: 10px; -fx-background-color: #00AFD1;" text="Generate Report">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+    <ChoiceBox fx:id="comboBox" layoutX="58.0" layoutY="115.0" prefWidth="150.0"/>
+    <Label layoutX="59.0" layoutY="87.0" prefHeight="20.0" prefWidth="110.0" text="Choose Criteria">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Label layoutX="59.0" layoutY="151.0" prefHeight="20.0" prefWidth="110.0" text="Enter Value">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <TextArea fx:id="contentArea" layoutX="59.0" layoutY="228.0" prefHeight="190.0" prefWidth="362.0"/>
+    <Button fx:id="logOutButton" layoutX="267.0" layoutY="448.0" mnemonicParsing="false" onAction="#logout"
+            prefHeight="36.0" prefWidth="81.0"
+            style="-fx-background-color: red; -fx-text-fill: white; -fx-background-radius: 10px;" text="Log Out"/>
+    <Label fx:id="errorLabel" layoutX="59.0" layoutY="497.0" prefHeight="30.0" prefWidth="362.0"
+           style="-fx-text-fill: red;" text="Label">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </Label>
+    <Spinner fx:id="idSpinner" layoutX="267.0" layoutY="114.0" prefHeight="26.0" prefWidth="82.0"/>
+    <Label layoutX="268.0" layoutY="87.0" prefHeight="20.0" prefWidth="39.0" text="Id">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <CheckBox fx:id="compositeCheckBoxStart" layoutX="454.0" layoutY="152.0" mnemonicParsing="false"/>
+    <Label layoutX="448.0" layoutY="132.0" text="More"/>
+    <CheckBox fx:id="compositeCheckBoxEnd" layoutX="658.0" layoutY="152.0" mnemonicParsing="false"/>
+    <Label layoutX="652.0" layoutY="129.0" text="Done"/>
+</AnchorPane>
