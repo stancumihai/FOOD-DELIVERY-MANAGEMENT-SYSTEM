@@ -10,6 +10,7 @@ public class BaseProductDao implements DAO<MenuItem> {
 
     private List<MenuItem> menuItems = new ArrayList<>();
 
+
     @Override
     public MenuItem findById(Integer id) {
         for (MenuItem menuItem : menuItems) {
@@ -37,15 +38,15 @@ public class BaseProductDao implements DAO<MenuItem> {
     @Override
     public MenuItem update(MenuItem model, Integer id) {
         MenuItem menuItem = findById(id);
-        if (menuItem != null) {
-            int cnt = 0;
-            for (MenuItem menuItem1 : menuItems) {
-                cnt++;
-                if (menuItem1.equals(menuItem)) {
-                    menuItems.remove(menuItem1);
-                    menuItems.add(cnt, model);
-                    return model;
-                }
+        assert menuItem != null;
+        assert DeliveryService.isWellFormed();
+        int cnt = 0;
+        for (MenuItem menuItem1 : menuItems) {
+            cnt++;
+            if (menuItem1.equals(menuItem)) {
+                menuItems.remove(menuItem1);
+                menuItems.add(cnt, model);
+                return model;
             }
         }
         return null;
@@ -53,6 +54,8 @@ public class BaseProductDao implements DAO<MenuItem> {
 
     @Override
     public MenuItem insert(MenuItem model) {
+        assert model != null;
+        assert DeliveryService.isWellFormed();
         if (menuItems.size() == 0) {
             model.setId(1);
         } else {

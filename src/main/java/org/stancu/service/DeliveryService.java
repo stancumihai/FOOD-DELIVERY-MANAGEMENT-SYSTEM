@@ -2,25 +2,40 @@ package org.stancu.service;
 
 import org.stancu.model.BaseProduct;
 import org.stancu.model.MenuItem;
+import org.stancu.model.Order;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class DeliveryService implements IDeliveryServiceProcessing {
 
     private static Set<MenuItem> itemsSet = new HashSet<>();
     private static List<MenuItem> items;
+    private static Map<Integer, Order> orders = new HashMap<>();
+    private static final List<MenuItem> menuItems = new ArrayList<>();
+
+    public static Map<Integer, Order> graspListOfOrder() {
+        OrderService orderService = OrderService.getInstance();
+        orders = orderService.selectAll();
+        return orders;
+    }
+
+    public static List<MenuItem> getMenuItems() {
+        ProductService productService = ProductService.getInstance();
+        return productService.selectAll();
+    }
 
     public static List<MenuItem> getItems() {
         return items;
     }
 
+    /**
+     * @param items items to put in DeliveryService
+     * @post return != null
+     */
     public static void setItems(List<MenuItem> items) {
         DeliveryService.items = items;
     }
@@ -42,6 +57,23 @@ public class DeliveryService implements IDeliveryServiceProcessing {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * @pre id != null
+     * @pre isWellFormed()
+     */
+    public static boolean isWellFormed() {
+        for (MenuItem o : itemsSet)
+            if (o == null)
+                return false;
+        for (Map.Entry<Integer, Order> o : graspListOfOrder().entrySet())
+            if (o == null)
+                return false;
+        for (MenuItem o : getMenuItems())
+            if (o == null)
+                return false;
+        return true;
     }
 }
 

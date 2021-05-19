@@ -1,0 +1,12 @@
+module:org.stancu
+org.stancu
+org.stancu.dao
+org.stancu.dao.user
+org.stancu.exception
+org.stancu.model
+org.stancu.model.userModel
+org.stancu.presentation.controller.login
+org.stancu.presentation.controller.user
+org.stancu.service
+org.stancu.service.user
+org.stancu.util

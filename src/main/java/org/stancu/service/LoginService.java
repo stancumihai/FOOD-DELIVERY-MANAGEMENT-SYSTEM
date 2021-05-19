@@ -20,6 +20,9 @@ public class LoginService {
     private static final EmployeeService employeeService = EmployeeService.getInstance();
     private int idGrasper;
 
+
+
+
     public static LoginService getInstance() {
         if (loginService == null) {
             loginService = new LoginService();
@@ -27,7 +30,14 @@ public class LoginService {
         return loginService;
     }
 
+    /**
+     * @pre formUser != null
+     * @pre isWellFormed()
+     */
     public String logIn(User formUser) {
+        assert formUser != null;
+        assert DeliveryService.isWellFormed();
+
         List<User> users = userService.selectAll();
         List<Administrator> admins = administratorService.selectAll();
         List<Client> clients = clientService.selectAll();

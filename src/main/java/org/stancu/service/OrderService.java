@@ -28,19 +28,31 @@ public class OrderService {
         }
         return orderService;
     }
-
+    /**
+     * @param id  to search in orders
+     * @post return != null
+     */
     public Order findById(Integer id) {
         return orderDataAccessService.findById(id);
     }
-
+    /**
+     * @param id  to update in orders
+     * @post return != null
+     */
     public Order update(Integer id, Order model) {
         return orderDataAccessService.update(model, id);
     }
-
+    /**
+     * @param model  to insert in orders
+     * @post return != null
+     */
     public void insert(Order model) {
         orderDataAccessService.insert(model);
     }
-
+    /**
+     * @param id  to search in orders
+     * @post return != null
+     */
     public Order delete(Integer id) {
         return orderDataAccessService.delete(id);
     }

@@ -27,11 +27,17 @@ public class ProductService {
         }
         return baseProdService;
     }
-
+    /**
+     * @param id Integer id
+     * @pre id != null
+     */
     public MenuItem findById(Integer id) {
         return baseProdDataAccessService.findById(id);
     }
-
+    /**
+     * @param id  to update in orders
+     * @post return != null
+     */
     public MenuItem update(Integer id, BaseProduct model) {
         return baseProdDataAccessService.update(model, id);
     }
@@ -39,7 +45,10 @@ public class ProductService {
     public void insert(MenuItem model) {
         baseProdDataAccessService.insert(model);
     }
-
+    /**
+     * @param id  to search in items
+     * @post return != null
+     */
     public MenuItem delete(Integer id) {
         return baseProdDataAccessService.delete(id);
     }
